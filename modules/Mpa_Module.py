@@ -18,6 +18,10 @@ class MPACore(object):
                 message = message.replace('minutes', 'min')
             if "seconds" in message:
                 message = message.replace('seconds', 'sek')
+            if "hour" in message:
+                message = message.replace('hour', 'godz')
+            if "hours" in message:
+                message = message.replace('hours', 'godz')
         return message
 
     def parse_string(self, parseString, data):
