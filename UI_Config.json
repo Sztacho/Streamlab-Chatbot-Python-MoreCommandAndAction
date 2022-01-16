@@ -7,6 +7,24 @@
     "tooltip": "This is your currency name, set it to the same currency name like you have in Streamlab chat bot",
     "group": "MA&A Core"
   },
+  "core_language": {
+    "type": "dropdown",
+    "value": "everyone",
+    "items": [
+      "Polish",
+      "English"
+    ],
+    "label": "Language",
+    "tooltip": "Set script language",
+    "group": "MA&A Core"
+  },
+  "throw_active": {
+    "type": "checkbox",
+    "value": "true",
+    "label": "Command active?",
+    "tooltip": "The command is enable ?",
+    "group": "Command Throw"
+  },
   "throw_command": {
     "type": "textbox",
     "value": "!throw",
@@ -51,6 +69,13 @@
     "label": "Throw response",
     "tooltip": "The command that will be responded to.",
     "group": "Command Throw"
+  },
+  "uptime_active": {
+    "type": "checkbox",
+    "value": "true",
+    "label": "Command active?",
+    "tooltip": "The command is enable ?",
+    "group": "Command Uptime"
   },
   "uptime_command": {
     "type": "textbox",
@@ -97,6 +122,13 @@
     "tooltip": "The command that will be responded to.",
     "group": "Command Uptime"
   },
+  "game_active": {
+    "type": "checkbox",
+    "value": "true",
+    "label": "Command active?",
+    "tooltip": "The command is enable ?",
+    "group": "Command Game"
+  },
   "game_command": {
     "type": "textbox",
     "value": "!game",
@@ -142,6 +174,13 @@
     "tooltip": "The command that will be responded to.",
     "group": "Command Game"
   },
+  "followage_active": {
+    "type": "checkbox",
+    "value": "true",
+    "label": "Command active?",
+    "tooltip": "The command is enable ?",
+    "group": "Command Followage"
+  },
   "followage_command": {
     "type": "textbox",
     "value": "!followage",
@@ -186,6 +225,13 @@
     "label": "Followage response",
     "tooltip": "The command that will be responded to.",
     "group": "Command Followage"
+  },
+  "gamble_active": {
+    "type": "checkbox",
+    "value": "true",
+    "label": "Command active?",
+    "tooltip": "The command is enable ?",
+    "group": "Command Gamble"
   },
   "gamble_command": {
     "type": "textbox",

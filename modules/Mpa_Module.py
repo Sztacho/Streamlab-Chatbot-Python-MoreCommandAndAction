@@ -12,6 +12,14 @@ class MPACore(object):
         self.parent = parent
         self.settings = settings
 
+    def message_translate(self, message):
+        if self.settings.data['core_language'] == "Polish":
+            if "minutes" in message:
+                message = message.replace('minutes', 'min')
+            if "seconds" in message:
+                message = message.replace('seconds', 'sek')
+        return message
+
     def parse_string(self, parseString, data):
         string_to_parse = str(parseString)
         if "$username" in string_to_parse:
@@ -28,7 +36,7 @@ class MPACore(object):
             string_to_parse = string_to_parse.replace('$game', data.get('game', 'error'))
         if "$followage" in string_to_parse:
             string_to_parse = string_to_parse.replace('$followage', data.get('followage', 'error'))
-        return string_to_parse
+        return self.message_translate(string_to_parse)
 
     def throw_points_at_the_another_viewer(self, thrower, target, amount=10):
         data = {
@@ -59,7 +67,6 @@ class MPACore(object):
         return json.loads(result)
 
     def stream_uptime(self):
-        self.parent.Log("test", str(dir(self.parent)))
         uptime = self.get_uptime_from_api(self.parent.GetChannelName())
         data = {
             "uptime": uptime['response']

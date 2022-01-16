@@ -37,38 +37,48 @@ class CoreClass:
 
     def check_permission(self, user, permission, info):
         data = Parent.HasPermission(user, mpa_settings.data[permission], mpa_settings.data[info])
-        Parent.Log(ScriptName, str(data))
         return data
 
     def check_cooldown(self, command):
         data = Parent.IsOnCooldown(ScriptName, mpa_settings.data[command])
-        Parent.Log(ScriptName, str(data))
         return data
+
+    def check_command_active(self, command_active):
+        data = mpa_settings.data[command_active]
+        return bool(data)
 
     def message_incoming(self, data):
         if data.GetParam(0).lower() == mpa_settings.data['throw_command'] and not self.check_cooldown(
-                'throw_command') and self.check_permission(data.User, 'throw_permission', 'throw_info'):
+                'throw_command') and self.check_permission(data.User, 'throw_permission',
+                                                           'throw_info') and self.check_command_active('throw_active'):
             self.mpa_core.throw_points_at_the_another_viewer(data.User, data.GetParam(1), data.GetParam(2))
             Parent.AddCooldown(ScriptName, mpa_settings.data['throw_command'], mpa_settings.data['throw_cooldown'])
 
         if data.GetParam(0).lower() == mpa_settings.data['uptime_command'] and not self.check_cooldown(
-                'uptime_command') and self.check_permission(data.User, 'uptime_permission', 'uptime_info'):
+                'uptime_command') and self.check_permission(data.User, 'uptime_permission',
+                                                            'uptime_info') and self.check_command_active(
+            'uptime_active'):
             self.mpa_core.stream_uptime()
             Parent.AddCooldown(ScriptName, mpa_settings.data['uptime_command'], mpa_settings.data['uptime_cooldown'])
 
         if data.GetParam(0).lower() == mpa_settings.data['game_command'] and not self.check_cooldown(
-                'game_command') and self.check_permission(data.User, 'game_permission', 'game_info'):
+                'game_command') and self.check_permission(data.User, 'game_permission',
+                                                          'game_info') and self.check_command_active('game_active'):
             self.mpa_core.stream_game()
             Parent.AddCooldown(ScriptName, mpa_settings.data['game_command'], mpa_settings.data['game_cooldown'])
 
         if data.GetParam(0).lower() == mpa_settings.data['followage_command'] and not self.check_cooldown(
-                'followage_command') and self.check_permission(data.User, 'followage_permission', 'followage_info'):
+                'followage_command') and self.check_permission(data.User, 'followage_permission',
+                                                               'followage_info') and self.check_command_active(
+            'followage_active'):
             self.mpa_core.follow_age(data.User, data.GetParam(1))
             Parent.AddCooldown(ScriptName, mpa_settings.data['followage_command'],
                                mpa_settings.data['followage_cooldown'])
 
         if data.GetParam(0).lower() == mpa_settings.data['gamble_command'] and not self.check_cooldown(
-                'gamble_command') and self.check_permission(data.User, 'gamble_permission', 'gamble_info'):
+                'gamble_command') and self.check_permission(data.User, 'gamble_permission',
+                                                            'gamble_info') and self.check_command_active(
+            'gamble_active'):
             self.mpa_core.gamble(data.User, data.GetParam(1))
             Parent.AddCooldown(ScriptName, mpa_settings.data['gamble_command'],
                                mpa_settings.data['gamble_cooldown'])
