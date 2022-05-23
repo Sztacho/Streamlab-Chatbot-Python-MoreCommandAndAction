@@ -6,7 +6,7 @@ Streamlab chatbot script. This script add additional command and action for view
 - Website:      https://twitch.tv/stachopl
 - Description:  Now your viewers has new interaction and commands
 - Creator:      StachoPL
-- Version:      1.0.0.0
+- Version:      1.0.0.1
 
 ##### ================= Script Instalation ======================
 
