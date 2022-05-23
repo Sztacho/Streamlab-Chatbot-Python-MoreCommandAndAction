@@ -17,7 +17,7 @@ ScriptName = "MC&A"
 Website = "https://twitch.tv/stachopl"
 Description = "Now your viewers has new interaction and commands"
 Creator = "StachoPL"
-Version = "1.0.0.0"
+Version = "1.0.0.1"
 # =========================================================
 
 core = None

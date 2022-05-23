@@ -18,6 +18,13 @@
     "tooltip": "Set script language",
     "group": "MA&A Core"
   },
+  "core_channel_name": {
+    "type": "textbox",
+    "value": "Your Channel Name",
+    "label": "Channel Name",
+    "tooltip": "Set Channel Name",
+    "group": "MA&A Core"
+  },
   "throw_active": {
     "type": "checkbox",
     "value": "true",

@@ -14,10 +14,10 @@
   "uptime_cooldown": 4.0,
   "uptime_response": "Stream Online: $uptime",
   "game_active": true,
-  "game_command": "!game",
+  "game_command": "!gra",
   "game_permission": "everyone",
   "game_info": "",
-  "game_cooldown": 4.0,
+  "game_cooldown": 1.0,
   "game_response": "Game: $game",
   "followage_active": true,
   "followage_command": "!followage",
@@ -29,7 +29,8 @@
   "gamble_command": "!gamble",
   "gamble_permission": "everyone",
   "gamble_info": "",
-  "gamble_cooldown": 4.0,
+  "gamble_cooldown": 1,
   "gamble_response_win": "$username win $amount $currency_name",
-  "gamble_response_loss": "$username loss $amount $currency_name"
+  "gamble_response_loss": "$username loss $amount $currency_name",
+  "core_channel_name": "StachoPL"
 };
